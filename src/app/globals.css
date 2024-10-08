@@ -1,0 +1,44 @@
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+
+@layer components {
+    .p-hover{
+        @apply px-2 py-[0.15rem] text-black hover:text-teal-700 -ml-1 text-sm font-bold hover:border-b hover:border-b-teal-500 duration-200 
+    }
+    .hambergerHover{
+      @apply  flex justify-start w-full gap-2 px-1 py-2 mt-2 text-white hover:bg-gray-700 hover:scale-105
+    }
+}
+
+@layer utilities {
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-30px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0) rotate(-90deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .hover\:product-animation:hover .product {
+    animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  .hover\:cart-animation:hover .cart {
+    animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+}
